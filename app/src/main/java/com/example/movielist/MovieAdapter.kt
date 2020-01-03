@@ -32,7 +32,7 @@ class MovieAdapter(private val movies: List<Results>, private val onClick: (Resu
         }
 
         fun bind(movieItem: Results) {
-            itemView.tvPosition.text = movieItem.title
+            itemView.tvPosition.text = context.getString(R.string.movie_position, adapterPosition+1)
             Glide.with(context).load(movieItem.getImageUrl()).into(itemView.ivPoster)
         }
     }
