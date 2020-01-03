@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         btnSubmit.setOnClickListener {
-            viewModel.getMovieList()
+            viewModel.getMovieList(etYear.text.toString().toInt())
         }
         rvMovies.layoutManager = GridLayoutManager(this, 2)
         rvMovies.adapter = movieAdapter

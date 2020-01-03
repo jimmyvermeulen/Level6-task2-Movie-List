@@ -18,11 +18,11 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
 
     /**
      * Get a random number trivia from the repository using Retrofit.
-     * onResponse if the response is successful populate the [trivia] object.
+     * onResponse if the response is successful populate the [movieList] object.
      * If the call encountered an error then populate the [error] object.
      */
-    fun getMovieList() {
-        movieRepository.getMovies().enqueue(object : Callback<MovieList> {
+    fun getMovieList(year : Int) {
+        movieRepository.getMovies(year).enqueue(object : Callback<MovieList> {
             override fun onResponse(call: Call<MovieList>, response: Response<MovieList>) {
                 if (response.isSuccessful) {
                     movieList.value = response.body()
