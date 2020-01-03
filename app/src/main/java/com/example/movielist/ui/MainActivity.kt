@@ -8,14 +8,16 @@ import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.movielist.MainActivityViewModel
 import com.example.movielist.MovieAdapter
-import com.example.movielist.R
 import com.example.movielist.model.Results
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import android.content.Intent
+import com.example.movielist.InformationActivity
+import com.example.movielist.R
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,5 +70,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun onMovieClick(movieItem: Results) {
         Snackbar.make(rvMovies, "This movie is ${movieItem.title}", Snackbar.LENGTH_LONG).show()
+        val informationIntent = Intent(this, InformationActivity::class.java)
+        informationIntent.putExtra("movieItem", movieItem)
+        startActivity(informationIntent)
     }
 }

@@ -1,6 +1,8 @@
 package com.example.movielist.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /*
 Copyright (c) 2020 Kotlin Data Classes Generated from JSON powered by http://www.json2kotlin.com
@@ -13,7 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-
+@Parcelize
 data class Results (
 
     @SerializedName("popularity") val popularity : Double,
@@ -30,6 +32,7 @@ data class Results (
     @SerializedName("vote_average") val vote_average : Double,
     @SerializedName("overview") val overview : String,
     @SerializedName("release_date") val release_date : String
-) {
-    fun getImageUrl() = "https://image.tmdb.org/t/p/w500/$poster_path"
+) : Parcelable {
+    fun getPosterUrl() = "https://image.tmdb.org/t/p/w500/$poster_path"
+    fun getBackdropUrl() = "https://image.tmdb.org/t/p/w500/$backdrop_path"
 }

@@ -17,7 +17,7 @@
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="The most popular movies of"
+        android:text="@string/popular_movies"
         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
         app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
         app:layout_constraintHorizontal_bias="0.5"
@@ -52,8 +52,8 @@
             android:id="@+id/etYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="year" />
+            android:hint="@string/year"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,6 +61,7 @@
         android:id="@+id/rvMovies"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
